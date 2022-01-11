@@ -1,0 +1,14 @@
+<?php echo $this->partial('partial/form', array('form' => $this->form)) ?>
+
+<!--Temporary navigation. This should be implemented in another module.-->
+<ul class="buttons">
+<?php if ($this->user->getRoleId() == 1) {
+	?><li><a href="<?php echo $this->url('user', array('action'=> 'manage')) ?>"><?php echo $this->translate('User management') ?></a></li>
+<?php } ?>
+<li><a href="<?php echo $this->url('user', array('action'=> 'change-password')) ?>"><?php echo $this->translate('Change password') ?></a></li>
+<li><a href="<?php echo $this->url('user', array('action'=> 'change-email')) ?>"><?php echo $this->translate('Change email') ?></a></li>
+<li><a href="<?php echo $this->url('user', array('action'=> 'logout')) ?>"><?php echo $this->translate('Logout') ?></a></li>
+<?php if ($this->user->getRoleId() == 3) {
+	?><li><a href="<?php echo $this->url('user', array('action'=> 'delete-account')) ?>"><?php echo $this->translate('Delete account') ?></a></li><?php
+} ?>
+</ul>

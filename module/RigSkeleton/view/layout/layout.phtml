@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title><?php echo $this->translate($this->headTitle()->renderTitle()) ?></title>
+<link rel="stylesheet" href="<?php echo $this->basePath() ?>/css.css" />
+</head>
+<body>
+
+<?php echo $this->navigation('navigation')->menu()->setPartial('partial/navigation.phtml') ?>
+
+<?php if ($messages = $this->flashMessenger()->getMessages()) {
+	?><div id="flash"><?php foreach ($messages as $message) {
+		?><p><?php echo $this->translate($message) ?></p><?php
+	} ?></div><?php
+} ?>
+
+<h1><?php echo $this->headTitle()->renderTitle() ?></h1>
+
+<div id="content">
+<?php echo $this->content ?>
+</div>
+
+</body>
+</html>

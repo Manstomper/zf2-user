@@ -1,0 +1,60 @@
+body {margin:0; padding:0; background-color:#fff; color:#333; font-size:100%; line-height:155%}
+body, input, textarea, select {font-family:"segoe ui", arial, helvetica, "liberation sans", sans-serif}
+
+#content {display:table; max-width:960px; margin:0 auto; padding:0 2em 2em}
+
+h1, h2 {margin:0.8em 0 0.4em; font:bold 185%/130% calibri, "segoe ui", arial, helvetica, "liberation sans", sans-serif; text-align:center}
+h2 {font-size:160%}
+
+a {color:#369; text-decoration:none}
+a:hover {color:#333}
+
+/*Navigation*/
+
+#nav {list-style-type:none; width:100%; margin:0; padding:0; background-color:#111}
+#nav a {display:inline-block; padding:0.5em 1em; color:#fff}
+#nav a:hover {color:#f66}
+
+/*Tables*/
+
+table {clear:both; margin:1em auto; border-collapse:collapse; line-height:140%}
+th {padding:0 1em 0.1em 0.5em; border-bottom:1px solid #666; text-align:left}
+td {padding:0.4em 1em 0.3em 0.5em; border-bottom:1px solid #ddd}
+tbody tr:hover {background-color:#eee}
+tbody tr:first-child td {padding-top:0.5em}
+
+/*Forms*/
+
+form {display:table; margin:1.5em auto 1em}
+
+label {display:block}
+label span {display:inline-block; min-width:10em; margin-right:0.7em; text-align:right}
+
+input, textarea, select {vertical-align:top; min-width:17em; margin:0 0 1.4em; padding:0.15em 0.3em; border:1px solid #999; font-size:100%; line-height:120%}
+input[type="radio"] {border:none}
+select, input[disabled] {min-width:0; width:auto}
+textarea {width:22em; height:12em}
+input:focus, textarea:focus, select:focus {border-color:#666; box-shadow:0px 0px 2px 1px #ccc}
+
+input[type="submit"] {clear:both; display:block; min-width:10px !important; width:auto !important; margin:0.5em auto 1em; padding:0.3em 0.6em; background-color:#333; color:#fff; border:none; font-size:95%}
+input[type="submit"]:hover, input[type="submit"]:focus {background-color:#4cbf6a; box-shadow:none}
+
+fieldset {margin:0 2em 0.5em 0; padding:0.8em 0 0; border:none}
+legend {display:block; width:100%; padding-bottom:0.8em; font-style:italic; text-align:right}
+
+form ul {list-style-type:none; display:table; max-width:26em; margin:-0.5em 0 1.5em auto; padding:0.1em 0 0.2em; background-color:#ffd86f}
+form li {padding-right:0.4em; padding-left:0.4em; color:#000}
+
+/*Messages and buttons*/
+
+ul.buttons {list-style-type:none; width:100%; margin:0.5em 0 1.5em; padding:0; text-align:right}
+ul.buttons li {display:inline}
+
+.button, .buttons a {display:inline-block; margin:0.2em 0; padding:0 0.4em 0.2em; background-color:#eee; color:#333; border-width:1px; border-style:solid; border-color:#eee #aaa #aaa #eee; font-size:95%; line-height:150%; border-radius:3px}
+td.buttons a {margin:0; position:relative; top:-1px; line-height:130%}
+
+#flash {margin-bottom:0.5em; padding:0.2em 0.5em; background-color:#9cf; text-align:center}
+#flash p {margin:0.5em 0}
+
+.message {max-width:40em}
+#error {text-align:center}

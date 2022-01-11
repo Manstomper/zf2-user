@@ -1,0 +1,28 @@
+<?php if ($this->unapproved) {
+	?><a href="<?php echo $this->url('user', array('action' => 'approve-all')) ?>" class="button">Approve all</a><?php
+} ?>
+
+<table>
+<thead>
+<tr>
+<th><?php echo $this->translate('ID') ?></th>
+<th><?php echo $this->translate('Email') ?></th>
+<th><?php echo $this->translate('Website') ?></th>
+<th><?php echo $this->translate('Name') ?></th>
+<th><?php echo $this->translate('Position') ?></th>
+<th><?php echo $this->translate('Options') ?></th>
+</tr>
+</thead>
+<tbody>
+<?php foreach ($this->users as $user) { ?>
+<tr>
+<td><?php echo $user->getId() ?></td>
+<td><?php echo $user->getEmail() ?></td>
+<td><?php if ($user->getWeb()) { ?><a href="<?php echo $user->getWeb() ?>"><?php echo substr($user->getWeb(), strpos($user->getWeb(), '://') + 3); } ?></td>
+<td><?php echo $user->getName() ?></td>
+<td><?php echo $user->roleName ?></td>
+<td class="buttons"><?php echo $this->partial('partial/change-role.phtml', array('userId' => $user->getId(), 'roleId' => $user->getRoleId(), 'pending' => $user->getPending(), 'allowDemoteAdmin' => $this->allowDemoteAdmin)) ?></td>
+</tr>
+<?php } ?>
+</tbody>
+</table>

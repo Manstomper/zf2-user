@@ -1,0 +1,15 @@
+<?php
+
+if ($this->message) {
+	?><p id="message"><?php echo $this->translate($this->message) ?></p><?php
+}
+
+$this->form->prepare();
+
+echo $this->form()->openTag($this->form);
+
+foreach ($this->form as $element) {
+	echo $this->formRow($element);
+}
+
+echo $this->form()->closeTag() ?>

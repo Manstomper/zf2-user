@@ -1,0 +1,43 @@
+<?php 
+switch ($roleId) {
+	case 3:
+		$links = array(
+			2 => 'Promote to Moderator',
+			-2 => 'Ban',
+		);
+		break;
+
+	case -1:
+		$links = array(
+			3 => 'Approve',
+			'delete' => 'Delete',
+		);
+		break;
+
+	case -2:
+		$links = array(
+			3 => 'Lift ban',
+		);
+		break;
+
+	case 2:
+		$links = array(
+			1 => 'Promote to Administrator',
+			3 => 'Demote to Contributor',
+		);
+		break;
+
+	case 1:
+		if ($allowDemoteAdmin) {
+			$links = array(
+				2 => 'Demote to Moderator',
+			);
+		}
+		break;
+}
+
+if (!empty($links)) {
+	foreach ($links as $key => $val) {
+		?><a href="<?php echo $this->url('user', array('action'=> 'change-status', 'param' => $key, 'id' => $userId)) ?>" class="usrLink<?php echo $key ?>"><?php echo $this->translate($val) ?></a> <?php
+	}
+} ?>

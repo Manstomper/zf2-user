@@ -1,0 +1,14 @@
+<ul id="nav" role="navigation"><?php
+$i = 1;
+foreach ($this->container as $page) {
+	?><li id="nav<?php echo $i++ ?>"><?php echo $this->navigation()->menu()->htmlify($page); ?><ul><?php
+	
+	foreach ($page as $subpage) {
+		?><li><?php echo $this->navigation()->menu()->htmlify($subpage); ?><?php
+		foreach ($subpage as $subpage2) {
+			?><ul><li><?php echo $this->navigation()->menu()->htmlify($subpage2); ?></li></ul><?php
+		}
+		?></li><?php
+	}
+	?></ul></li><?php
+} ?></ul>

@@ -1,0 +1,7 @@
+<?php echo $this->partial('partial/form', array('form' => $this->form)) ?>
+
+<!--Temporary navigation. This should be implemented in another module.-->
+<ul class="buttons">
+<li><a href="<?php echo $this->url('user', array('action'=> 'forgot-password')) ?>"><?php echo $this->translate('Forgot password?') ?></a></li>
+<li><a href="<?php echo $this->url('user', array('action'=> 'register')) ?>"><?php echo $this->translate('Register') ?></a></li>
+</ul>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Error</title>
+<link rel="stylesheet" href="<?php echo $this->basePath(); ?>/css.css" />
+</head>
+<body>
+
+<?php $this->layout('layout/blank'); ?>
+
+<h1><?php echo $this->translate('Error') ?></h1>
+
+<p id="error"><?php echo $this->message ?> <!--change this--><a href="<?php echo $this->url('user') ?>" class="button">This may be what you're looking for.</a></p>
+
+<?php if (empty($this->display_exceptions) || !isset($this->exception) || !$this->exception instanceof Exception) { return; } ?>
+
+<hr />
+
+<h3><?php echo get_class($this->exception) ?></h3>
+
+<?php echo $this->translate('File') ?>
+<pre style="margin-top:0"><?php echo $this->exception->getFile() . ', ' . $this->translate('Line') . ' ' . $this->exception->getLine() ?></pre>
+
+<?php echo $this->translate('Message') ?>
+<pre style="margin-top:0"><?php echo $this->exception->getMessage() ?></pre>
+
+<?php echo $this->translate('Stack trace') ?>
+<pre style="max-height:100px; margin-top:0; overflow:auto"><?php echo $this->exception->getTraceAsString() ?></pre>
+
+<?php if (!$e = $this->exception->getPrevious()) { return; } ?>
+
+<hr />
+
+<?php while ($e) { ?>
+
+	<h3><?php echo get_class($e) ?></h3>
+
+	<?php echo $this->translate('File') ?>:
+	<pre style="margin-top:0"><?php echo $e->getFile() ?>: <?php echo $e->getLine() ?></pre>
+
+	<?php echo $this->translate('Message') ?>:
+	<pre style="margin-top:0"><?php echo $e->getMessage() ?></pre>
+
+	<?php echo $this->translate('Stack trace') ?>:
+	<pre style="max-height:100px; margin-top:0; overflow:auto"><?php echo $e->getTraceAsString() ?></pre>
+
+	<?php $e = $e->getPrevious();
+} ?>
+
+</body>
+</html>
